@@ -12,19 +12,20 @@ html, body{
     color: rgba(33, 37, 41, 1);
     display: grid;
     place-items: center;
-    margin-top: 20px;
+    margin-top: 15px;
     background-color: var(--neutra);
 }
 
 .titulo{
     color: var(--primaria);
-    letter-spacing: .6em;
+    font-size: 3em;
+    letter-spacing: .345em;
 }
 
 .subtitulo{
     color: var(--primaria);
     font-weight: normal;
-    font-size: 1.15em;
+    font-size: 1.13em;
 }
 
 
