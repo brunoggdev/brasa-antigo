@@ -19,8 +19,10 @@ html, body{
 .titulo{
     color: var(--primaria);
     font-size: 3em;
-    letter-spacing: .345em;
+	text-align-last: justify;
+    margin-left:-3px;
 }
+
 
 .subtitulo{
     color: var(--primaria);

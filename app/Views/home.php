@@ -1,6 +1,12 @@
 
-<div>
-    <h1 class="titulo">BRASA</h1>
+<div class="bloco-titulo">
+    <h1 class="titulo">
+        B
+        R
+        A
+        S
+        A
+    </h1>
     <h2 class="subtitulo">Novo projeto CodeIgniter 4</h2>
 </div>
 
