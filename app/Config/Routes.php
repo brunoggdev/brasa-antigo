@@ -41,9 +41,7 @@ $routes->set404Override();
 // rota inicial
 $routes->get('/', 'PaginasController::index');
 
-// declarar rotas para um método com nome similar no PaginasController
-// permite adicionar lógicas específicas para essa rota no controller.
-// do contrário, ela será mapeada automaticamente na rota padrão mais abaixo.
+// especifique rotas que deseja realizar alguma lógica antes enviar resposta
 $routes->get('/login', 'PaginasController::login');
 
 $routes->post('login', 'UsuariosController::login');
@@ -51,8 +49,8 @@ $routes->post('login', 'UsuariosController::login');
 //rotas restritas
 $routes->group('', ['filter' => 'autenticar'], function ($routes){
 
-    // note que esta rota utiliza o mesmo método das rotas padrão sem lógica
-    // específica mais abaixo, porém foi declarada aqui para ser considerada restrita.
+    // note que esta rota seria mapeada na rota padrão mas está declarada aqui para
+    // ser considerada restrita, passando o nome da view desejada para o metodo mostrar (/restrito).
     $routes->get('restrito', 'PaginasController::mostrar/restrito');
 
     // rotas exclusivas para admin
