@@ -12,12 +12,11 @@ class Autenticar implements FilterInterface
     {
         if(empty( session()->get('usuario') )){
 
-            session()->set([
-                'loginMsg' => 'Por favor, realize login para acessar essa página.',
-                'requestedUri' => $request->uri
+            return redirect('login')->with('mensagem', [
+                'mensagem' => 'Voce deve realizar o login para acessar essa página.',
+                'cor' => 'danger'
             ]);
-
-            return redirect('login');
+            
         }
     }
 

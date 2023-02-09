@@ -37,15 +37,29 @@ $routes->set404Override();
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
+
+// rota inicial
 $routes->get('/', 'PagesController::index');
 
-$routes->get('login', 'UsuariosController::index');
+
 $routes->post('login', 'UsuariosController::login');
 
 //rotas restritas
 $routes->group('', ['filter' => 'autenticar'], function ($routes){
+
     $routes->get('restrito', 'PagesController::mostrar/restrito');
+
+    // rotas exclusivas para admin
+    $routes->group('', ['filter' => 'admin'], function ($routes){
+
+        //
+        
+    });
+
+
+
     $routes->post('logout', 'UsuariosController::logout');
+
 });
 
 

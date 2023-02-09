@@ -8,15 +8,12 @@ class UsuariosController extends BaseController
 {
 
     /**
-    * Renderiza a pagina de login caso o usuaário já não esteja logado
+    * Aqui pode vir uma função para listar todos os usuarios
     * @author Brunoggdev
     */
     public function index()
     {
-        if(! empty( session()->get('usuario') )){
-            return redirect('restrito');
-        }
-        return renderizaPagina('login');
+        // 
     }
 
 
@@ -30,12 +27,15 @@ class UsuariosController extends BaseController
         $usuario = $this->request->getPost('usuario');
         $senha = $this->request->getPost('senha');
 
-        $usuarioAutenticado = (new UsuariosModel())->autenticar($usuario, $senha);
+        $usuarioAutenticado = (new UsuariosModel)->autenticar($usuario, $senha);
 
         if (! $usuarioAutenticado) {
-            session()->set(['loginMsg' => 'Usuario e/ou senha inválidos.']);
 
-            return redirect('login');
+            return redirect('login')->with('mensagem', [
+                'mensagem' => 'Usuario e/ou senha inválidos.',
+                'cor' => 'danger'
+            ]);
+            
         }
         
         session()->set(['usuario' => $usuarioAutenticado]);
@@ -50,9 +50,13 @@ class UsuariosController extends BaseController
     */
     public function logout()
     {
+
         session()->remove('usuario');
-        session()->set(['loginMsg' => 'Logout efetuado.', 'alertColor' => 'success']);
-        return redirect('login');
+
+        return redirect('login')->with('mensagem', [
+            'mensagem' => 'Logout efetuado com sucesso.',
+            'cor' => 'success'
+        ]);
     }
 
 }

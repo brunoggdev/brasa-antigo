@@ -10,7 +10,7 @@ class PagesController extends BaseController
     }
 
     /**
-    * Tenta renderizar a pagina como requisitada na url
+    * Tenta renderizar um arquivo com o nome passado na url
     * @author Brunoggdev
     */
     public function mostrar($page):string

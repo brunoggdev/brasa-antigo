@@ -12,3 +12,8 @@
     <link rel="stylesheet" href="<?=base_url('styles.css?v='.VERSION??'')?>">
 </head>
 <body>
+
+<?php if(! url_is('/login') ): ?>
+   <!-- Exemplo de como não renderizar algo na página de login como um menu interno
+   já que a página de login também usa o header utiliza o mesmo header que -->
+<?php endif; ?>

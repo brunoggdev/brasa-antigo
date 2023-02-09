@@ -11,11 +11,10 @@
             </div>
 
             <?php
-            $loginMsg = session()->get('loginMsg');
-            $alertColor = session()->get('alertColor') ?? 'danger';
+            $mensagem = session('mensagem');
 
-            if($loginMsg){
-                echo "<div class='alert alert-$alertColor'>$loginMsg</div>";
+            if($mensagem){
+                echo "<div class='alert alert-$mensagem[cor]'>$mensagem[mensagem]</div>";
             }
 
             session()->destroy();

@@ -30,7 +30,7 @@
     <section>
         <h4>> Lembre-se</h4>
         <p>
-            A documentação sempre será sua melhor amiga. Confira a documentação oficial do CodeIgniter4 <a href="https://codeigniter.com/user_guide/intro/index.html">aqui</a> e a breve documentação deste projeto no repositório do github <a href="https://github/brunoggdev/brasa">aqui</a>.
+            A documentação sempre será sua melhor amiga. Confira a documentação oficial do CodeIgniter4 <a href="https://codeigniter.com/user_guide/intro/index.html">aqui</a> e a breve documentação deste projeto no repositório do github <a href="https://github.com/brunoggdev/Brasa">aqui</a>.
         </p>
     </section>
 </article>
