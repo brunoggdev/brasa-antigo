@@ -26,7 +26,7 @@ class Filters extends BaseConfig
         'invalidchars'  => InvalidChars::class,
         'secureheaders' => SecureHeaders::class,
         'autenticar'    => Autenticar::class,
-        'admin'         => IsAdmin::class
+        'admin'         => [Autenticar::class, IsAdmin::class]
     ];
 
     /**
