@@ -1,6 +1,6 @@
 # Brasa
 
-## O que é o Brasa?
+## O que é?
 
 Brasa é um boilerplate para CodeIgniter 4, ou seja, uma base para projetos contendo diversas funcionalidades pré-configuradas
 e comentadas em português para ajudar desenvolvedores brasileiros a iniciar seus projetos em CodeIgniter4 mais rapidamente, mesmo os iniciantes.
@@ -8,9 +8,9 @@ e comentadas em português para ajudar desenvolvedores brasileiros a iniciar seu
 
 ## Baterias inclusas
 
-Por padrão, Brasa vem com importação de CDNs do JQuery e Bootstrap, mas que podem ser facilmente removidas se necessário, bem como a estilização inicial.
+Por padrão, Brasa vem com importação de CDNs do *JQuery* e *Bootstrap*, mas que podem ser facilmente removidas se necessário, bem como a estilização inicial.
 
-O Brasa conta ainda com:
+O projeto conta ainda com:
 
 - Diversas funções auxiliares para tornar o código mais prático, limpo e legível;
 - Sistemas básicos de roteamento e autenticação,bem como níveis de acesso de usuário;
