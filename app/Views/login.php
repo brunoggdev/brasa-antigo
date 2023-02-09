@@ -14,7 +14,7 @@
             $mensagem = session('mensagem');
 
             if($mensagem){
-                echo "<div class='alert alert-$mensagem[cor]'>$mensagem[mensagem]</div>";
+                echo "<div class='alert alert-$mensagem[cor]'>$mensagem[texto]</div>";
             }
 
             session()->destroy();
