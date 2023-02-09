@@ -2,7 +2,7 @@
 
 namespace Config;
 
-use App\Controllers\PagesController;
+use App\Controllers\PaginasController;
 
 // Create a new instance of our RouteCollection class.
 $routes = Services::routes();
@@ -39,15 +39,21 @@ $routes->set404Override();
 // route since we don't have to scan directories.
 
 // rota inicial
-$routes->get('/', 'PagesController::index');
+$routes->get('/', 'PaginasController::index');
 
+// declarar rotas para um método com nome similar no PaginasController
+// permite adicionar lógicas específicas para essa rota no controller.
+// do contrário, ela será mapeada automaticamente na rota padrão mais abaixo.
+$routes->get('/login', 'PaginasController::login');
 
 $routes->post('login', 'UsuariosController::login');
 
 //rotas restritas
 $routes->group('', ['filter' => 'autenticar'], function ($routes){
 
-    $routes->get('restrito', 'PagesController::mostrar/restrito');
+    // note que esta rota utiliza o mesmo método das rotas padrão sem lógica
+    // específica mais abaixo, porém foi declarada aqui para ser considerada restrita.
+    $routes->get('restrito', 'PaginasController::mostrar/restrito');
 
     // rotas exclusivas para admin
     $routes->group('', ['filter' => 'admin'], function ($routes){
@@ -63,8 +69,9 @@ $routes->group('', ['filter' => 'autenticar'], function ($routes){
 });
 
 
-//rota padrão
-$routes->get('(:any)', 'PagesController::mostrar/$1');
+// rota padrão: caso não tenha sido mapeada nas rotas específicas acima, esta
+// irá buscar uma view com o nome requisitado na url (útil para páginas estáticas).
+$routes->get('(:any)', 'PaginasController::mostrar/$1');
 
 /*
  * --------------------------------------------------------------------

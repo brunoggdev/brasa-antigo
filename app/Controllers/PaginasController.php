@@ -2,7 +2,7 @@
 
 namespace App\Controllers;
 
-class PagesController extends BaseController
+class PaginasController extends BaseController
 {
     public function index()
     {
@@ -20,5 +20,19 @@ class PagesController extends BaseController
         }
         
         return renderizaPagina($page);
+    }
+
+
+    /**
+    * Renderiza a página de login ou redireciona caso o usuário já esteja logado
+    * @author Brunoggdev
+    */
+    public function login()
+    {
+        if(! empty( session('usuario') )){
+            return redirect('home');
+        }
+        
+        return renderizaPagina('login');
     }
 }

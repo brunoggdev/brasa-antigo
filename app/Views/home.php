@@ -12,19 +12,20 @@
 
 <article>
     <section>
-        <h4>> Database</h4>
+        <h4>> Iniciando</h4>
         <p>
-            Crie um novo banco de dados e altere o campo <strong>database.default.database</strong> no arquivo <strong>.env</strong> 
-            que está na raiz do projeto para o nome do seu novo banco de dados. Depois, no terminal da raiz do projeto, 
-            você pode utilizar os comandos <tt>php spark migrate</tt>&nbsp;para criar uma tabela de usuarios e <tt>php spark db:seed UsuariosSeeder</tt>&nbsp;
-            para popular a tabela com dois usuarios predefinidos (usuario1 e usuario2, com senha 1234 para ambos).
+            Primeiro, crie um novo banco de dados. Depois, na raiz do projeto, crie uma cópia do arquivo <strong>envExemplo</strong>, 
+            renomeie para <strong>.env</strong> e edite o campo <strong>database.default.database</strong> para o nome do seu banco de dados.
+            Em seguida, no terminal, você pode utilizar os comandos <tt>php spark migrate</tt>&nbsp;para criar uma tabela de usuarios pré-configurada 
+            e <tt>php spark db:seed UsuariosSeeder</tt>&nbsp; para popular a tabela com dois usuarios predefinidos: usuario1 que é admin e usuario2 que é 
+            usuario comum, com senha 1234 para ambos.
         </p>
     </section>
     <section>
         <h4>> Login</h4>
         <p>
             Com o banco de dados populado, você pode acessar a página de <a href="<?=base_url('/login')?>">login</a> e utilizar o usuario predefinido. 
-            Se tudo foi feito corretamente, você deverá ver uma simples página de área restrita com um borão para logout.
+            Se tudo foi feito corretamente, você deverá ver uma simples página de área restrita com um botão para logout.
         </p>
     </section>
     <section>
