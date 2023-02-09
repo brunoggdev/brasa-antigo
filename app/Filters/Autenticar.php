@@ -13,7 +13,7 @@ class Autenticar implements FilterInterface
         if(empty( session()->get('usuario') )){
 
             return redirect('login')->with('mensagem', [
-                'mensagem' => 'Voce deve realizar o login para acessar essa página.',
+                'texto' => 'Voce deve realizar o login para acessar essa página.',
                 'cor' => 'danger'
             ]);
             
