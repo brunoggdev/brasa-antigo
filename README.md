@@ -5,6 +5,7 @@
 Brasa é um boilerplate para CodeIgniter 4, ou seja, uma base para projetos contendo diversas funcionalidades pré-configuradas
 e comentadas em português para ajudar desenvolvedores brasileiros a iniciar seus projetos em CodeIgniter4 mais rapidamente, mesmo os iniciantes.
 
+
 ## Baterias inclusas
 
 Por padrão, Brasa vem com importação de CDNs do JQuery e Bootstrap, mas que podem ser facilmente removidas se necessário, bem como a estilização inicial.
@@ -12,8 +13,9 @@ Por padrão, Brasa vem com importação de CDNs do JQuery e Bootstrap, mas que p
 O Brasa conta ainda com:
 
 - Diversas funções auxiliares para tornar o código mais prático, limpo e legível;
-- sistemas básicos de roteamento e autenticação,bem como níveis de acesso de usuário;
-- exemplos de controllers, models, migrations, seeders, estrutura de views e muito mais.
+- Sistemas básicos de roteamento e autenticação,bem como níveis de acesso de usuário;
+- Exemplos de controllers, models, migrations, seeders, estrutura de views e muito mais.
+
 
 ## Utilizando o Brasa
 
@@ -23,6 +25,7 @@ conferir a página inicial que contem instruções sobre como iniciar o projeto.
 Todas as funções auxiliares estão no arquivo "Common.php" dentro da pasta app, você pode conferir o arquivo pra saber o que mais tem
 a sua disposição e, por estarem devidamente comentadas, sua IDE deve te ajudar a identifica-las. Sinta-se também livre para adicionar
 quaisquer outras funções que quiser neste arquivo.
+
 
 ## Ademais
 
