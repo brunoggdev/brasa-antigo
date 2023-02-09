@@ -54,7 +54,7 @@ class UsuariosController extends BaseController
         session()->remove('usuario');
 
         return redirect('login')->with('mensagem', [
-            'mensagem' => 'Logout efetuado com sucesso.',
+            'texto' => 'Logout efetuado com sucesso.',
             'cor' => 'success'
         ]);
     }
