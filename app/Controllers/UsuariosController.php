@@ -32,7 +32,7 @@ class UsuariosController extends BaseController
         if (! $usuarioAutenticado) {
 
             return redirect('login')->with('mensagem', [
-                'mensagem' => 'Usuario e/ou senha inválidos.',
+                'texto' => 'Usuario e/ou senha inválidos.',
                 'cor' => 'danger'
             ]);
             
