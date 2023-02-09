@@ -30,7 +30,7 @@ class PaginasController extends BaseController
     public function login()
     {
         if(! empty( session('usuario') )){
-            return redirect('home');
+            return redirect('restrito');
         }
         
         return renderizaPagina('login');
