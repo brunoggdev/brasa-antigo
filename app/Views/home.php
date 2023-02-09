@@ -16,7 +16,7 @@
         <p>
             Primeiro, crie um novo banco de dados. Depois, na raiz do projeto, crie uma cópia do arquivo <strong>envExemplo</strong>, 
             renomeie para <strong>.env</strong> e edite o campo <strong>database.default.database</strong> para o nome do seu banco de dados.
-            Em seguida, no terminal, você pode utilizar os comandos <tt>php spark migrate</tt>&nbsp;para criar uma tabela de usuarios pré-configurada 
+            Em seguida, ainda na raiz do projeto, você pode abrir o terminal e utilizar os comandos <tt>php spark migrate</tt>&nbsp;para criar uma tabela de usuarios pré-configurada 
             e <tt>php spark db:seed UsuariosSeeder</tt>&nbsp; para popular a tabela com dois usuarios predefinidos: usuario1 que é admin e usuario2 que é 
             usuario comum, com senha 1234 para ambos.
         </p>
