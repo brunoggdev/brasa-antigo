@@ -96,3 +96,23 @@ function repostaBrasa(bool $condicao, ?array $sucesso = null, ?array $erro = nul
         
     }
 }
+
+
+
+/**
+* Higieniza todos os campos de um array
+* @author Bruno
+*/
+function higienizaArray($array):array
+{
+    // O "&" antes da variavel indica que estou alterando o array original
+    // e não apenas uma cópia dele;
+    foreach ($array as &$item) {
+        if (is_array($item)) {
+          $item = higienizaArray($item);
+        } else {
+          $item = strip_tags($item);
+        }
+      }
+      return $array;
+}

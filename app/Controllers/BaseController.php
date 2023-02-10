@@ -49,4 +49,37 @@ abstract class BaseController extends Controller
 
         // E.g.: $this->session = \Config\Services::session();
     }
+
+
+    /**
+    * Retorna parametros enviados por post já higienizados.
+    * @param array|string|null $index — Index para resgatar do $_POST.
+    * @author Brunoggdev
+    */
+    public function postHigienizado($index = null):mixed
+    {
+        $post = $this->request->getPost($index);
+
+        if (is_array($post)) {
+            return higienizaArray($post);
+        }
+
+        return strip_tags($post);
+    }
+
+
+    /**
+    * Retorna parametros enviados por get já higienizados.
+    * @author Brunoggdev
+    */
+    public function getHigienizado($index):mixed
+    {
+        $get = $this->request->getGet($index);
+
+        if (is_array($get)) {
+            return higienizaArray($get);
+        }
+
+        return strip_tags($get);
+    }
 }
