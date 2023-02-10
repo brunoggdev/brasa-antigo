@@ -223,7 +223,7 @@ class CLIRequest extends Request
      * @param int|null          $filter A filter name to apply.
      * @param mixed|null        $flags
      *
-     * @return array|null
+     * @return array|null|mixed
      */
     public function getGet($index = null, $filter = null, $flags = null)
     {
