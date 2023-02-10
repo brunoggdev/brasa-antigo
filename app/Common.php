@@ -64,6 +64,10 @@ function renderiza404():string
 */
 function renderizaPagina(string $page, array $data = []):string
 {
+    // dados do usuário ficarão disponíveis globalmente 
+    // na variável $usuario se ele estiver logado
+    $data['usuario'] = session('usuario') ?? [];
+    
     $pagina = view('templates/header', $data);
     $pagina .= view($page);
     $pagina .= view('templates/footer');
