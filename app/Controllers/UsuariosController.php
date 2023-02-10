@@ -40,7 +40,7 @@ class UsuariosController extends BaseController
         
         session()->set(['usuario' => $usuarioAutenticado]);
         
-        return redirect('restrito'); 
+        return redirect('home'); 
     }
 
 

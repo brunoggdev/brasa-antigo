@@ -6,7 +6,7 @@ class PaginasController extends BaseController
 {
     public function index()
     {
-        return renderizaPagina('home');
+        return renderizaPagina('index');
     }
 
     /**
@@ -29,8 +29,8 @@ class PaginasController extends BaseController
     */
     public function login()
     {
-        if(! empty( session('usuario') )){
-            return redirect('restrito');
+        if( usuarioLogado() ){
+            return redirect('home');
         }
         
         return renderizaPagina('login');
