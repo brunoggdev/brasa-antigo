@@ -69,3 +69,30 @@ function renderizaPagina(string $page, array $data = []):string
     return $pagina;
 }
 
+
+/**
+* Retorna uma resposta generica baseado na condição informada no padrão 
+* utilizado pelo Brasa para repostas flash (array associativo com cor e texto),
+* sendo possível também informar um array customizado para cada caso.
+* @author Brunoggdev
+* @origem Common.php
+*/
+function repostaBrasa(bool $condicao, ?array $sucesso = null, ?array $erro = null):array
+{
+
+    if( $condicao ){
+
+        return $sucesso ?? [
+            'texto' => 'Operação realizada com sucesso.',
+            'cor' => 'success'
+        ];
+
+    }else{
+
+        return $erro ?? [
+            'texto' => 'Houve um problema ao realizar esta operação.',
+            'cor' => 'danger'
+        ];
+        
+    }
+}
