@@ -15,6 +15,10 @@ class CriarTabelaUsuarios extends Migration
                 'unsigned' => true,
                 'auto_increment' => true,
             ],
+            'nome' => [
+                'type' => 'VARCHAR',
+                'constraint' => 255,
+            ],
             'usuario' => [
                 'type' => 'VARCHAR',
                 'constraint' => 100,

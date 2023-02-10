@@ -50,7 +50,7 @@ $routes->post('login', 'UsuariosController::login');
 $routes->group('', ['filter' => 'autenticar'], function ($routes){
 
     // note que esta rota seria mapeada na rota padrão mas está declarada aqui para
-    // ser considerada restrita, passando o nome da view desejada para o metodo mostrar (/restrito).
+    // ser considerada restrita, passando o nome da view desejada para o metodo mostrar ("/restrito").
     $routes->get('restrito', 'PaginasController::mostrar/restrito');
 
     // rotas exclusivas para admin
