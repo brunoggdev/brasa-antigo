@@ -48,10 +48,12 @@ function pasta_public(string $extraPath = ''):string
 */
 function renderiza404():string
 {
-    $pagina = view('templates/header');
-    $pagina .= view('404');
-    $pagina .= view('templates/footer');
+    // $pagina = view('templates/header');
+    // $pagina .= view('404');
+    // $pagina .= view('templates/footer');
     
+    $pagina = view('404');
+
     return $pagina;
 }
 
@@ -115,4 +117,14 @@ function higienizaArray($array):array
         }
       }
       return $array;
+}
+
+
+/**
+* Verifica se existe uma sessão ativa para o usuário
+* @author Brunoggdev
+*/
+function usuarioLogado():bool
+{
+    return ! empty( session('usuario') );
 }

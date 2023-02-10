@@ -47,11 +47,10 @@ $routes->get('/login', 'PaginasController::login');
 $routes->post('login', 'UsuariosController::login');
 
 //rotas restritas
-$routes->group('', ['filter' => 'autenticar'], function ($routes){
+$routes->group('', ['filter' => 'logado'], function ($routes){
 
-    // note que esta rota seria mapeada na rota padrão mas está declarada aqui para
-    // ser considerada restrita, passando o nome da view desejada para o metodo mostrar ("/restrito").
-    $routes->get('restrito', 'PaginasController::mostrar/restrito');
+    // Utilize "/" após o nome do método para passar parametros para ele
+    $routes->get('home', 'PaginasController::mostrar/home');
 
     // rotas exclusivas para admin
     $routes->group('', ['filter' => 'admin'], function ($routes){
