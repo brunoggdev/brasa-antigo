@@ -72,7 +72,7 @@ abstract class BaseController extends Controller
     * Retorna parametros enviados por get já higienizados.
     * @author Brunoggdev
     */
-    public function getHigienizado($index):mixed
+    public function getHigienizado($index = null):mixed
     {
         $get = $this->request->getGet($index);
 
