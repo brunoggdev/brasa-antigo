@@ -25,7 +25,7 @@ class IsAdmin implements FilterInterface
      */
     public function before(RequestInterface $request, $arguments = null)
     {
-        if(! session('usuario')['is_admin'] ){
+        if(! usuario('is_admin') ){
 
             return redirect()->back()->with('mensagem', [
                 'texto' => 'Isto está disponível apenas para administradores.',

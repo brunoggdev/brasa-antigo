@@ -10,7 +10,7 @@ class UsuarioLogado implements FilterInterface
 {
     public function before(RequestInterface $request, $arguments = null)
     {
-        if(! usuarioLogado() ){
+        if(! usuario('logado') ){
 
             return redirect('login')->with('mensagem', [
                 'texto' => 'Voce deve realizar o login para acessar essa página.',

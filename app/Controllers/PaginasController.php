@@ -29,7 +29,7 @@ class PaginasController extends BaseController
     */
     public function login()
     {
-        if( usuarioLogado() ){
+        if( usuario('logado') ){
             return redirect('home');
         }
         

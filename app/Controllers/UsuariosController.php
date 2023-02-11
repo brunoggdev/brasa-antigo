@@ -38,6 +38,7 @@ class UsuariosController extends BaseController
             
         }
         
+        $usuarioAutenticado['logado'] = true;
         session()->set(['usuario' => $usuarioAutenticado]);
         
         return redirect('home'); 
