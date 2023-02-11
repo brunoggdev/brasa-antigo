@@ -15,7 +15,7 @@
 </head>
 <body>
 
-<?php if( usuarioLogado() ): ?>
+<?php if( usuario('logado') ): ?>
    <!-- Como renderizar algo apenas se o usuário estiver logado -->
 <?php endif; ?>
 

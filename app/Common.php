@@ -46,7 +46,7 @@ function pasta_public(string $extraPath = ''):string
 * @author Brunoggdev
 * @origem Common.php
 */
-function renderiza404():string
+function renderiza404()
 {
     // $pagina = view('templates/header');
     // $pagina .= view('404');
@@ -64,9 +64,6 @@ function renderiza404():string
 */
 function renderizaPagina(string $page, array $data = []):string
 {
-    // dados do usuário ficarão disponíveis globalmente 
-    // na variável $usuario se ele estiver logado
-    $data['usuario'] = session('usuario') ?? [];
     
     $pagina = view('templates/header', $data);
     $pagina .= view($page);
@@ -109,7 +106,7 @@ function repostaBrasa(bool $condicao, ?array $sucesso = null, ?array $erro = nul
 * Higieniza todos os campos de um array
 * @author Bruno
 */
-function higienizaArray($array):array
+function higienizaArray(array $array):array
 {
     // O "&" antes da variavel indica que estou alterando o array original
     // e não apenas uma cópia dele;
@@ -123,12 +120,16 @@ function higienizaArray($array):array
       return $array;
 }
 
-
 /**
-* Verifica se existe uma sessão ativa para o usuário
+* Retorna o valor desejado da sessão do usuário ou, caso  
+* nenhum valor seja informado, se a sessão está ativa.
 * @author Brunoggdev
 */
-function usuarioLogado():bool
+function usuario(?string $index = 'logado'):mixed
 {
-    return ! empty( session('usuario') );
+    if(empty( session('usuario') )){
+        return '';
+    }
+
+    return strip_tags( session('usuario')[$index] );
 }
