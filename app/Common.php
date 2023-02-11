@@ -80,7 +80,7 @@ function renderizaPagina(string $page, array $data = []):string
 * @author Brunoggdev
 * @origem Common.php
 */
-function repostaBrasa(bool $condicao, ?array $sucesso = null, ?array $erro = null):array
+function mensagemBrasa(bool $condicao, ?array $sucesso = null, ?array $erro = null):array
 {
 
     if( $condicao ){
