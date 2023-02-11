@@ -26,7 +26,8 @@ class UsuariosController extends BaseController
 
         $usuario = $this->request->getPost('usuario');
         $senha = $this->request->getPost('senha');
-
+        
+        // Para chamadas unicas de classe voce pode instancia-la dentro de parenteses
         $usuarioAutenticado = (new UsuariosModel)->autenticar($usuario, $senha);
 
         if (! $usuarioAutenticado) {
