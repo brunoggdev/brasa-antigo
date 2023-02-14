@@ -22,10 +22,12 @@ class CriarTabelaUsuarios extends Migration
             'usuario' => [
                 'type' => 'VARCHAR',
                 'constraint' => 100,
+                'unique' => true
             ],
             'email' => [
                 'type' => 'VARCHAR',
                 'constraint' => 100,
+                'unique' => true
             ],
             'senha' => [
                 'type' => 'VARCHAR',
