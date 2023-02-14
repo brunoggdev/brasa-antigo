@@ -177,3 +177,13 @@ function usuario(?string $index = 'logado'):mixed
 
     return strip_tags( session('usuario')[$index] ?? '' );
 }
+
+
+/**
+* Retorna a criptografia da senha informada no padrão adotado pelo PHP
+* @author Brunoggdev
+*/
+function criptografarSenha(string $senha):string
+{
+    return password_hash($senha, PASSWORD_DEFAULT);
+}
