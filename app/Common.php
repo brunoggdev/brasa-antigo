@@ -75,7 +75,7 @@ function renderizaPagina(string $page, array $data = []):string
 
 /**
 * Retorna uma resposta generica baseado na condição informada no padrão 
-* utilizado pelo Brasa para repostas flash (array associativo com cor e texto),
+* recomendado pelo Brasa para repostas flash (array associativo com texto e cor),
 * sendo possível também informar um array customizado para cada caso.
 * @author Brunoggdev
 * @origem Common.php
@@ -101,10 +101,53 @@ function mensagemBrasa(bool $condicao, ?array $sucesso = null, ?array $erro = nu
 }
 
 
+/**
+* Utilizado inicialmente para facilmente acessar a mensagemBrasa como mensagem flash, 
+* retorna, caso exista, o index desejado de um array associativo guardado na session.
+* @param string $index 'texto' ou 'cor'  
+* @author Brunoggdev
+*/
+function respostaBrasa(string|int $index, ?string $sessionKey = 'resposta'):mixed
+{
+    return session($sessionKey)[$index] ?? '';
+}
+
+
+/**
+* Renderiza um componente toast do Bootstrap com a mensagemBrasa passada como
+* mensagem flash para a chave da session desejada ('resposta' por padrão).
+* @author Brunoggdev
+*/
+function toastBrasa(?string $sessionKey = 'resposta'):void
+{
+    // Utilizando sintaxe alternativa apenas para tornar mais fácil
+    // de editar o HTML caso seja necessário
+    if ( session($sessionKey) ):?> 
+        <!-- Toast -->
+        <div class="position-fixed bottom-0 right-0 p-3 " style="z-index: 5; right: 0; bottom: 0;">
+        <div id="mensagemToast" class="toast hide " role="alert" aria-live="assertive" aria-atomic="true" data-delay="4000">
+            <div class="toast-header text-white bg-<?=respostaBrasa('cor')?>">
+            <strong class="mr-auto">Mensagem</strong>
+            <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+            <div class="toast-body">
+                <?=respostaBrasa('texto')?>
+            </div>
+        </div>
+        </div>
+        <script>
+            $('#mensagemToast').toast('show')
+        </script>
+    <?php endif;
+
+}
 
 /**
 * Higieniza todos os campos de um array
-* @author Bruno
+* @author Brunoggdev
+* @origem Common.php
 */
 function higienizaArray(array $array):array
 {
@@ -124,6 +167,7 @@ function higienizaArray(array $array):array
 * Retorna o valor desejado da sessão do usuário ou, caso  
 * nenhum valor seja informado, se a sessão está ativa.
 * @author Brunoggdev
+* @origem Common.php
 */
 function usuario(?string $index = 'logado'):mixed
 {
