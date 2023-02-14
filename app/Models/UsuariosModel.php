@@ -9,7 +9,7 @@ class UsuariosModel extends Model
     //Atributos de configuração
     protected $table = 'usuarios';
     protected $primaryKey = 'id';
-
+    protected $allowedFields = ['nome', 'usuario', 'senha', 'email', 'is_admin'];
 
     /**
      * Tenta autenticar o usuario e senha no banco de dados
