@@ -12,7 +12,7 @@ class UsuarioLogado implements FilterInterface
     {
         if(! usuario('logado') ){
 
-            return redirect('login')->with('mensagem', [
+            return redirect('login')->with('resposta', [
                 'texto' => 'Voce deve realizar o login para acessar essa página.',
                 'cor' => 'danger'
             ]);
