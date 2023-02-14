@@ -137,7 +137,7 @@ function toastBrasa(?string $sessionKey = 'resposta'):void
             </div>
         </div>
         </div>
-        <script>
+        <script type="module">
             $('#mensagemToast').toast('show')
         </script>
     <?php endif;
@@ -175,5 +175,5 @@ function usuario(?string $index = 'logado'):mixed
         return '';
     }
 
-    return strip_tags( session('usuario')[$index] );
+    return strip_tags( session('usuario')[$index] ?? '' );
 }
